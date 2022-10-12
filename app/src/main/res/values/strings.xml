@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">NewOldTown</string>
+    <string name="home">Home</string>
+    <string name="messages">Messages</string>
+    <string name="explore">Explore</string>
+    <string name="profile">Profile</string>
+    <string name="theme">Theme</string>
+    <string name="dynamic_color">Dynamic Color</string>
+    <string name="apply">Apply</string>
+</resources>
