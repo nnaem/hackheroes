@@ -76,7 +76,7 @@ fun MainHomeScreen(navigator: BackstackNavigator<AppDestination>) {
             ) { destination ->
                 when (destination) {
                     HomeDestination.HOME -> HomeScreen()
-                    HomeDestination.MESSAGES -> MessagesScreen()
+                    HomeDestination.MYMESSAGES -> MyMessagesScreen()
                     HomeDestination.EXPLORE -> ExploreScreen()
                     HomeDestination.PROFILE -> ProfileScreen()
                 }

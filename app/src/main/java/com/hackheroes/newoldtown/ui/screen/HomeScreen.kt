@@ -19,10 +19,15 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.hackheroes.newoldtown.di.state
+import com.hackheroes.newoldtown.ui.viewmodel.PathsVM
+import org.koin.androidx.compose.viewModel
+import ovh.plrapps.mapcompose.ui.MapUI
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen() {
+fun HomeScreen(viewModel: PathsVM = viewModel()) {
     Scaffold(
         topBar = {
             Row {
@@ -59,6 +64,7 @@ fun HomeScreen() {
                         .fillMaxSize(),
                     lineHeight = 35.sp,
                 )
+                MapUI(state = viewModel.state)
             }
         }
     }

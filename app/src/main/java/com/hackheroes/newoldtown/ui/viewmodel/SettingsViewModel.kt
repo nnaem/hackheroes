@@ -7,6 +7,9 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.hackheroes.newoldtown.preferences.PreferencesManager
 import com.hackheroes.newoldtown.ui.theme.Theme
+import ovh.plrapps.mapcompose.api.addLayer
+import ovh.plrapps.mapcompose.api.enableRotation
+import ovh.plrapps.mapcompose.ui.state.MapState
 
 class SettingsViewModel(
     private val app: Application,

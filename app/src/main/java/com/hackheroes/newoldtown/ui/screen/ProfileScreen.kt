@@ -61,6 +61,21 @@ fun ProfileScreen(
                 onConfirm = viewModel::setTheme
             )
         }
+        GroupHeader(title = "Profile")
+        ListItem(
+            modifier = Modifier.clickable {  },
+            headlineText = { Text(stringResource(R.string.profile)) },
+            leadingContent = {
+                Icon(Icons.Default.Style,
+                contentDescription = null) },
+            trailingContent = {
+                Button(onClick = { /*TODO*/ }) {
+                    Text(text = "Profile")
+                }
+            }
+        )
+
+        Divider()
         GroupHeader(title = "Appearance")
         ListItem(
             modifier = Modifier.clickable { viewModel.showThemePicker() },
@@ -72,21 +87,6 @@ fun ProfileScreen(
                 }
             }
         )
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            ListItem(
-                modifier = Modifier.clickable { prefs.dynamicColor = !prefs.dynamicColor },
-                headlineText = { Text(stringResource(R.string.dynamic_color)) },
-                leadingContent = { Icon(Icons.Default.Palette, contentDescription = null) },
-                trailingContent = {
-                    Switch(
-                        checked = prefs.dynamicColor,
-                        onCheckedChange = { prefs.dynamicColor = it }
-                    )
-                }
-            )
-        }
-
-        Divider()
     }
 }
 

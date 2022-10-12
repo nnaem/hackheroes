@@ -4,7 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Chat
-import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Map
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.hackheroes.newoldtown.R
@@ -32,8 +32,8 @@ enum class HomeDestination(
     val icon: @RawValue ImageVector,
     @StringRes val label: Int
 ) : Destination {
-    HOME(Icons.Default.Home, R.string.home),
-    MESSAGES(Icons.Default.Chat, R.string.messages),
+    HOME(Icons.Default.Map, R.string.home),
+    MYMESSAGES(Icons.Default.Chat, R.string.mymessages),
     EXPLORE(Icons.Default.Search, R.string.explore),
     PROFILE(Icons.Default.AccountCircle, R.string.profile)
 }
