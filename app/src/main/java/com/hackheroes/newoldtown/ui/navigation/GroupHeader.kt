@@ -27,7 +27,7 @@ fun GroupHeader(
         Text(
             text = title,
             color = color,
-            fontSize = LocalTextStyle.current.fontSize.times(0.95f),
+            fontSize = LocalTextStyle.current.fontSize,
             fontWeight = FontWeight.SemiBold
         )
     }
