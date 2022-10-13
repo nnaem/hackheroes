@@ -1,71 +1,36 @@
 package com.hackheroes.newoldtown.ui.screen
 
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ElevatedCard
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import androidx.lifecycle.viewmodel.compose.viewModel
-import com.hackheroes.newoldtown.di.state
-import com.hackheroes.newoldtown.ui.viewmodel.PathsVM
-import org.koin.androidx.compose.viewModel
-import ovh.plrapps.mapcompose.ui.MapUI
+import androidx.compose.ui.tooling.preview.Preview
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.compose.GoogleMap
+import com.google.maps.android.compose.Marker
+import com.google.maps.android.compose.MarkerState
+import com.google.maps.android.compose.rememberCameraPositionState
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun HomeScreen(viewModel: PathsVM = viewModel()) {
-    Scaffold(
-        topBar = {
-            Row {
-                IconButton(onClick = {}) {
-                    Icon(
-                        imageVector = Icons.Default.ArrowBack,
-                        contentDescription = null
-                    )
-                }
-            }
-        }
-    ) { paddingValues ->
-        Column {
-            Column(
-                modifier =
-                Modifier
-                    .fillMaxWidth()
-                    .fillMaxHeight(0.2f)
-                    .padding(paddingValues),
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-            }
-        }
-        Column(
-            Modifier
-                .fillMaxWidth()
-                .padding(20.dp)
+@Preview
+fun HomeScreen() {
+
+    val singapore = LatLng(52.055, 20.44)
+    val cameraPositionState = rememberCameraPositionState {
+        position = CameraPosition.fromLatLngZoom(singapore, 16f)
+    }
+
+    ElevatedCard {
+        GoogleMap(
+            modifier = Modifier.fillMaxSize(),
+            cameraPositionState = cameraPositionState
         ) {
-            ElevatedCard {
-                Text(
-                    text = "Testing",
-                    modifier = Modifier
-                        .padding(horizontal = 20.dp, vertical = 10.dp)
-                        .fillMaxSize(),
-                    lineHeight = 35.sp,
-                )
-                MapUI(state = viewModel.state)
-            }
+            Marker(
+                state = MarkerState(position = singapore),
+                title = "Żyrardów",
+                snippet = "Centrum Żyrardowa"
+            )
         }
     }
 }
