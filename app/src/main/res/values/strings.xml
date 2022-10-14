@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">NewOldTown</string>
-    <string name="home">Żyrardów</string>
-    <string name="mymessages">Zgłoszenia</string>
-    <string name="explore">Wyszukaj</string>
+    <string name="city_map">Mapa miasta</string>
+    <string name="add_idea">Dodaj pomysł</string>
+    <string name="ideas">Pomysły</string>
     <string name="profile">Profile</string>
-    <string name="theme">Theme</string>
     <string name="dynamic_color">Dynamic Color</string>
     <string name="apply">Apply</string>
     <string name="register">Register</string>

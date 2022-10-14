@@ -2,10 +2,9 @@ package com.hackheroes.newoldtown.ui.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Chat
+import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.filled.Map
-import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.hackheroes.newoldtown.R
 import com.xinto.taxi.Destination
@@ -15,25 +14,18 @@ import kotlinx.parcelize.RawValue
 @Parcelize
 sealed interface AppDestination : Destination {
     @Parcelize
-    object Home : AppDestination
+    object CityMap : AppDestination
 
     @Parcelize
-    object Messages : AppDestination
+    object AddIdea : AppDestination
 
     @Parcelize
-    object Explore : AppDestination
-
-    @Parcelize
-    object Profile : AppDestination
+    object Ideas : AppDestination
 }
 
 @Parcelize
-enum class HomeDestination(
-    val icon: @RawValue ImageVector,
-    @StringRes val label: Int
-) : Destination {
-    HOME(Icons.Default.Map, R.string.home),
-    MYMESSAGES(Icons.Default.Chat, R.string.mymessages),
-    EXPLORE(Icons.Default.Search, R.string.explore),
-    PROFILE(Icons.Default.AccountCircle, R.string.profile)
+enum class HomeDestination(val icon: @RawValue ImageVector, @StringRes val label: Int) : Destination {
+    CITY_MAP(Icons.Filled.Map, R.string.city_map),
+    ADD_IDEA(Icons.Filled.Add, R.string.add_idea),
+    IDEAS(Icons.Filled.Lightbulb, R.string.ideas),
 }

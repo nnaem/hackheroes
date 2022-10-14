@@ -14,7 +14,7 @@ import com.google.maps.android.compose.rememberCameraPositionState
 
 @Composable
 @Preview
-fun HomeScreen() {
+fun CityMapScreen() {
 
     val singapore = LatLng(52.055, 20.44)
     val cameraPositionState = rememberCameraPositionState {
