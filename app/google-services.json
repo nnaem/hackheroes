@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "740744317105",
+    "project_id": "hackheroes-daaba",
+    "storage_bucket": "hackheroes-daaba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740744317105:android:b16cfd6e65e2f3c3d17a90",
+        "android_client_info": {
+          "package_name": "com.hackheroes.newoldtown"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "740744317105-hnampvmigo70nsjduvqo7b6uf5nesvu6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hackheroes.newoldtown",
+            "certificate_hash": "7075f783a2264a9e208905e55e40efb4b953721b"
+          }
+        },
+        {
+          "client_id": "740744317105-d7riqvlfeg18j36f8i91609n30vpr35v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNJeQv8y454hQq2-LqUZ-L_blVa2qSt40"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "740744317105-d7riqvlfeg18j36f8i91609n30vpr35v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
