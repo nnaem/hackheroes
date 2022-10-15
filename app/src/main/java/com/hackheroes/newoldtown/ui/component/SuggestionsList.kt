@@ -25,7 +25,7 @@ fun SuggestionsList() {
 
     JetFirestore(
         path = { collection("city_ideas_android") },
-        queryOnCollection = { orderBy("title", Query.Direction.DESCENDING) },
+        queryOnCollection = { orderBy("title", Query.Direction.ASCENDING) },
         onSingleTimeCollectionFetch = { values, exception ->
             suggestionsList = suggestionsList + values.getListOfObjects()
         }
