@@ -2,7 +2,6 @@ package com.hackheroes.newoldtown.ui.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
@@ -32,18 +31,18 @@ fun ListItem(suggestion: Suggestion) {
                 text = suggestion.description,
                 fontSize = 14.sp
             )
-            Row(
+            /*Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.End
             ) {
                 Text(
                     text = suggestion.author,
                     fontSize = 14.sp,
-                )
+                )*/
             }
         }
     }
-}
+//}
 
 @Composable
 @Preview
@@ -51,7 +50,7 @@ fun ListItemPreview() {
     ListItem(suggestion = Suggestion(
         "Stacja do ładowania rowerów elektrycznych",
         "Lubię jeździć na rowerze, a żeby to robić jeszcze szybciej jeżdżę na rowerze elektrycznym. W Żyrardowie brakuje stacji do ładowania takich rowerów. Chcę taką stację :D",
-        "krzysiekkucharski7@gmail.com",
+        //"krzysiekkucharski7@gmail.com",
         0.0,
         0.0)
     );

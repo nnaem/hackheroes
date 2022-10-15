@@ -1,5 +1,7 @@
 package com.hackheroes.newoldtown.ui.screen
 
+import android.content.Context
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -22,15 +24,23 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.google.firebase.firestore.FirebaseFirestore
 import com.hackheroes.newoldtown.Suggestion
+
+private fun mToast(context: Context, message: String, length: Int) {
+    Toast.makeText(context, message, length)
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 @Preview
 fun AddIdeaScreen() {
+    val context = LocalContext.current
+    var db:FirebaseFirestore = FirebaseFirestore.getInstance()
     val titleState = remember { mutableStateOf(TextFieldValue()) }
     val descriptionState = remember { mutableStateOf(TextFieldValue()) }
 
@@ -41,7 +51,7 @@ fun AddIdeaScreen() {
     Column(
         modifier = Modifier
             .padding(32.dp)
-            .background(color = Color.White, shape = RoundedCornerShape(4.dp) )
+            .background(color = Color.White, shape = RoundedCornerShape(4.dp))
             .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
@@ -93,7 +103,23 @@ fun AddIdeaScreen() {
         Spacer(modifier = Modifier.height(25.dp))
 
         Button(
-            onClick = { /*TODO*/ },
+            onClick = {
+                val add = HashMap<String,Any>()
+
+                add["title"] = titleState.value.text
+                add["description"] = descriptionState.value.text
+                add["lat"] = 69
+                add["lng"] = 1
+
+                db.collection("city_ideas_android")
+                    .add(add)
+                    .addOnSuccessListener {
+
+                    }
+                    .addOnFailureListener {
+                        mToast(context, "Failed to add suggestion", Toast.LENGTH_SHORT)
+                    }
+            },
             modifier = Modifier
                 .width(200.dp)
                 .fillMaxWidth()

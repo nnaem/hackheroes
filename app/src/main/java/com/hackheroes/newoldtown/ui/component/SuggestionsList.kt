@@ -2,12 +2,8 @@ package com.hackheroes.newoldtown.ui.component
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,7 +25,7 @@ fun SuggestionsList() {
 
     JetFirestore(
         path = { collection("city_ideas_android") },
-        queryOnCollection = { orderBy("author", Query.Direction.DESCENDING) },
+        queryOnCollection = { orderBy("title", Query.Direction.DESCENDING) },
         onSingleTimeCollectionFetch = { values, exception ->
             suggestionsList = suggestionsList + values.getListOfObjects()
         }

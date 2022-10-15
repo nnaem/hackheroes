@@ -7,7 +7,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.hackheroes.newoldtown.Suggestion
 
@@ -26,7 +25,7 @@ fun ListItems(suggestions: List<Suggestion>) {
     }
 }
 
-@Composable
+/*@Composable
 @Preview
 fun ListItemsPreview() {
     ListItems(
@@ -86,8 +85,9 @@ fun ListItemsPreview() {
             Suggestion(
                 "A co ze zwierzętami!",
                 "Trzeba stworzyć plac zabaw dla psów, żeby miały gdzie się bawić w berka gryzionego. Pilne!",
-                "namely1@gmail.com", 0.0, 0.0
+                "namely1@gmail.com",
+                0.0, 0.0
             ),
         )
     )
-}
+}*/
