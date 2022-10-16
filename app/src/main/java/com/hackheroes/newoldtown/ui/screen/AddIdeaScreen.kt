@@ -141,6 +141,7 @@ fun AddIdeaScreen() {
                 add["description"] = descriptionState.value.text
                 add["lat"] = 69
                 add["lng"] = 1
+                add["votes"] = 0
 
                 db.collection("city_ideas_android")
                     .add(add)

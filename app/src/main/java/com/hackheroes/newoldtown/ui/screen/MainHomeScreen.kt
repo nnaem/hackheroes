@@ -3,6 +3,10 @@ package com.hackheroes.newoldtown.ui.screen
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.animation.scaleIn
+import androidx.compose.animation.scaleOut
+import androidx.compose.animation.slideIn
+import androidx.compose.animation.slideOut
 import androidx.compose.animation.with
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -26,6 +30,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.core.graphics.scaleMatrix
 import com.hackheroes.newoldtown.ui.navigation.AppDestination
 import com.hackheroes.newoldtown.ui.navigation.HomeDestination
 import com.xinto.taxi.BackstackNavigator
@@ -75,12 +80,13 @@ fun MainHomeScreen(navigator: BackstackNavigator<AppDestination>) {
             modifier = Modifier.padding(paddingValues)
         ) {
             Taxi(navigator = mainRootNavigator,
-                transitionSpec = { fadeIn() with fadeOut() }
+                transitionSpec = { scaleIn() with fadeOut() }
             ) { destination ->
                 when (destination) {
                     HomeDestination.CITY_MAP -> CityMapScreen()
                     HomeDestination.ADD_IDEA -> AddIdeaScreen()
                     HomeDestination.IDEAS -> IdeasScreen()
+                    HomeDestination.SETTINGS -> Settings()
                 }
             }
         }

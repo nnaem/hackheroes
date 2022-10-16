@@ -5,6 +5,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Lightbulb
 import androidx.compose.material.icons.filled.Map
+import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.hackheroes.newoldtown.R
 import com.xinto.taxi.Destination
@@ -21,6 +22,9 @@ sealed interface AppDestination : Destination {
 
     @Parcelize
     object Ideas : AppDestination
+
+    @Parcelize
+    object Settings : AppDestination
 }
 
 @Parcelize
@@ -28,4 +32,5 @@ enum class HomeDestination(val icon: @RawValue ImageVector, @StringRes val label
     CITY_MAP(Icons.Filled.Map, R.string.city_map),
     ADD_IDEA(Icons.Filled.Add, R.string.add_idea),
     IDEAS(Icons.Filled.Lightbulb, R.string.ideas),
+    SETTINGS(Icons.Filled.Settings, R.string.settings),
 }

@@ -3,8 +3,9 @@
     <string name="city_map">Mapa miasta</string>
     <string name="add_idea">Dodaj pomysł</string>
     <string name="ideas">Pomysły</string>
-    <string name="profile">Profile</string>
+    <string name="profile">Konto</string>
     <string name="dynamic_color">Dynamic Color</string>
-    <string name="apply">Apply</string>
-    <string name="register">Register</string>
+    <string name="apply">Zatwierdź zmiany</string>
+    <string name="register">Zarejestruj się</string>
+    <string name="settings">Ustawienia</string>
 </resources>

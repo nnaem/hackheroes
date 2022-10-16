@@ -38,6 +38,7 @@ class MainActivity : ComponentActivity() {
                     is AppDestination.CityMap -> MainHomeScreen(navigator = navigator)
                     AppDestination.AddIdea -> MainHomeScreen(navigator = navigator)
                     AppDestination.Ideas -> MainHomeScreen(navigator = navigator)
+                    AppDestination.Settings -> MainHomeScreen(navigator = navigator)
                 }
             }
         }
