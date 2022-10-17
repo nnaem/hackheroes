@@ -1,11 +1,46 @@
 <resources>
-    <string name="app_name">NewOldTown</string>
-    <string name="city_map">Mapa miasta</string>
-    <string name="add_idea">Dodaj pomysł</string>
-    <string name="ideas">Pomysły</string>
-    <string name="profile">Konto</string>
-    <string name="dynamic_color">Dynamic Color</string>
-    <string name="apply">Zatwierdź zmiany</string>
-    <string name="register">Zarejestruj się</string>
+    <!-- Common -->
+    <string name="app_name">New Old Town</string>
+    <string name="email">E-mail</string>
+    <string name="password">Hasło</string>
+    <string name="repeat_password">Powtórz hasło</string>
+    <string name="generic_error">Nieokreślony błąd - spróbuj powonie później</string>
+    <string name="email_error">Wprowadź prawidłowy adres e-mail</string>
+    <string name="cancel">Anuluj</string>
+    <string name="try_again">Spróbuj ponownie</string>
+
+    <!-- LoginScreen -->
+    <string name="sign_in">Zaloguj się</string>
+    <string name="login_details">Wprowadź dane logowania</string>
+    <string name="forgot_password">Zapomniane hasło? Kliknij tutaj</string>
+    <string name="recovery_email_sent">Sprawdź skrzynkę pocztową</string>
+    <string name="empty_password_error">Hasło nie może być puste</string>
+
+    <!-- SignUpScreen -->
+    <string name="create_account">Utwórz konto</string>
+    <string name="password_error">Hasło powinno zawierać co najmniej 6 znaków</string>
+    <string name="password_match_error">Hasła nie są takie same</string>
+
+    <!-- Home -->
+    <string name="suggestion_map">Mapa Zgłoszeń</string>
+    <string name="menu">Menu</string>
+
+    <!-- EditSuggestionScreen -->
+    <string name="add_suggestion">Dodaj sugestię dla miasta</string>
+    <string name="title">Nazwa</string>
+    <string name="description">Opis</string>
+
+    <!-- SettingsScreen -->
     <string name="settings">Ustawienia</string>
+    <string name="sign_out">Wyloguj się</string>
+    <string name="delete_my_account">Usuń konto</string>
+
+    <!-- Dialogs -->
+    <string name="sign_out_title">Na pewno wylogować?</string>
+    <string name="sign_out_description">Aby dodać i przeglądać sugestie dla miast będzie wymagane ponowne zalogowanie się</string>
+    <string name="delete_account_title">Usunąć konto?</string>
+    <string name="delete_account_description">Stracisz mozliwość dodawania nowych sugestii dla miasta</string>
+    <string name="succesfully_added_suggestion">Pomyśnie dodano!</string>
+    <string name="suggestion_title_error">Tutuł musi mieć przynajmniej 5 znaków</string>
+    <string name="suggestion_description_error">Opis musi mieć przynajmniej 10 znaków</string>
 </resources>
