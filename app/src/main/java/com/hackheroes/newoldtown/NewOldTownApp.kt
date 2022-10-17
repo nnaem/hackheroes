@@ -27,7 +27,7 @@ import com.hackheroes.newoldtown.common.snackbar.SnackbarManager
 import com.hackheroes.newoldtown.screens.add_suggestion.AddSuggestionScreen
 import com.hackheroes.newoldtown.screens.home.HomeScreen
 import com.hackheroes.newoldtown.screens.login.LoginScreen
-import com.hackheroes.newoldtown.screens.settings.SettingsScreen
+import com.hackheroes.newoldtown.screens.menu.MenuScreen
 import com.hackheroes.newoldtown.screens.sign_up.SignUpScreen
 import com.hackheroes.newoldtown.screens.splash.SplashScreen
 import com.hackheroes.newoldtown.theme.NewOldTownTheme
@@ -86,7 +86,7 @@ fun NavGraphBuilder.newOldTownGraph(appState: NewOldTownAppState) {
     }
 
     composable(SETTINGS_SCREEN) {
-        SettingsScreen(
+        MenuScreen(
             restartApp = { route -> appState.clearAndNavigate(route) },
             openScreen = { route -> appState.navigate(route) }
         )

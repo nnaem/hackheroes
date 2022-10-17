@@ -1,11 +1,8 @@
-package com.hackheroes.newoldtown.screens.settings
+package com.hackheroes.newoldtown.screens.menu
 
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.viewModelScope
 import com.hackheroes.newoldtown.ADD_SUGGESTION_SCREEN
 import com.hackheroes.newoldtown.HOME_SCREEN
-import com.hackheroes.newoldtown.LOGIN_SCREEN
-import com.hackheroes.newoldtown.SIGN_UP_SCREEN
 import com.hackheroes.newoldtown.SPLASH_SCREEN
 import com.hackheroes.newoldtown.model.service.AccountService
 import com.hackheroes.newoldtown.model.service.StorageService
@@ -15,16 +12,10 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SettingsViewModel @Inject constructor(
+class MenuModel @Inject constructor(
     private val accountService: AccountService,
     private val storageService: StorageService
 ) : NewOldTownViewModel() {
-    var uiState = mutableStateOf(SettingsUiState())
-        private set
-
-    fun initialize() {
-        uiState.value = SettingsUiState(accountService.isAnonymousUser())
-    }
 
     fun onExit(openScreen: (String) -> Unit) = openScreen(HOME_SCREEN)
 

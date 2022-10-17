@@ -1,4 +1,4 @@
-package com.hackheroes.newoldtown.screens.settings
+package com.hackheroes.newoldtown.screens.menu
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -21,14 +21,12 @@ import com.hackheroes.newoldtown.common.ext.toolbarActions
 
 @ExperimentalMaterialApi
 @Composable
-fun SettingsScreen(
+fun MenuScreen(
     restartApp: (String) -> Unit,
     openScreen: (String) -> Unit,
     modifier: Modifier = Modifier,
-    viewModel: SettingsViewModel = hiltViewModel()
+    viewModel: MenuModel = hiltViewModel()
 ) {
-    LaunchedEffect(Unit) { viewModel.initialize() }
-
     Column(
         modifier = modifier
             .fillMaxWidth()

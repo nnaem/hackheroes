@@ -23,15 +23,14 @@
 
     <!-- Home -->
     <string name="suggestion_map">Mapa Zgłoszeń</string>
-    <string name="menu">Menu</string>
 
     <!-- EditSuggestionScreen -->
     <string name="add_suggestion">Dodaj sugestię dla miasta</string>
     <string name="title">Nazwa</string>
     <string name="description">Opis</string>
 
-    <!-- SettingsScreen -->
-    <string name="settings">Ustawienia</string>
+    <!-- Menu -->
+    <string name="menu">Menu</string>
     <string name="sign_out">Wyloguj się</string>
     <string name="delete_my_account">Usuń konto</string>
 

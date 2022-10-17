@@ -35,13 +35,12 @@ fun HomeScreen(
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = hiltViewModel()
 ) {
-    val suggestions = viewModel.allSuggestions
     val center = LatLng(52.055, 20.44)
     val cameraPositionState = rememberCameraPositionState {
         position = CameraPosition.fromLatLngZoom(center, 16f)
     }
 
-    var db = Firebase.firestore
+    val db = Firebase.firestore
 
     Scaffold(
         floatingActionButton = {
@@ -103,7 +102,6 @@ fun HomeScreen(
 
     DisposableEffect(viewModel) {
         viewModel.addListener()
-        viewModel.loadSuggestionOptions()
         onDispose { viewModel.removeListener() }
     }
 }

@@ -24,9 +24,6 @@ class HomeViewModel @Inject constructor(
     var userSuggestions = mutableStateMapOf<String, Suggestion>()
         private set
 
-    var options = mutableStateOf<List<String>>(listOf())
-        private set
-
     fun addListener() {
         viewModelScope.launch(showErrorExceptionHandler) {
             storageService.addListener(accountService.getUserId(), ::onUserDocEvent, ::onError)
@@ -41,39 +38,15 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch(showErrorExceptionHandler) { storageService.removeListener() }
     }
 
-    fun loadSuggestionOptions() {
-        options.value = SuggestionActionOption.getOptions(true)
-    }
-
     fun onAddClick(openScreen: (String) -> Unit) = openScreen(ADD_SUGGESTION_SCREEN)
 
     fun onSettingsClick(openScreen: (String) -> Unit) = openScreen(SETTINGS_SCREEN)
-
-
-    private fun onDeleteSuggestionClick(suggestion: Suggestion) {
-        viewModelScope.launch(showErrorExceptionHandler) {
-            storageService.deleteSuggestion(suggestion.title) { error ->
-                if (error != null)
-                {
-                    onError(error)
-                }
-            }
-        }
-    }
 
     private fun onUserDocEvent(wasDocumentDeleted: Boolean, suggestion: Suggestion) {
         if (wasDocumentDeleted) {
             userSuggestions.remove(suggestion.title)
         } else {
             userSuggestions[suggestion.title] = suggestion
-        }
-    }
-
-    private fun onDocEvent(wasDocumentDeleted: Boolean, suggestion: Suggestion) {
-        if (wasDocumentDeleted) {
-            allSuggestions.remove(suggestion.title)
-        } else {
-            allSuggestions[suggestion.title] = suggestion
         }
     }
 }
