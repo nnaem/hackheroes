@@ -30,6 +30,7 @@ import com.hackheroes.newoldtown.screens.login.LoginScreen
 import com.hackheroes.newoldtown.screens.menu.MenuScreen
 import com.hackheroes.newoldtown.screens.sign_up.SignUpScreen
 import com.hackheroes.newoldtown.screens.splash.SplashScreen
+import com.hackheroes.newoldtown.screens.suggestion_list.SuggestionListScreen
 import com.hackheroes.newoldtown.theme.NewOldTownTheme
 import kotlinx.coroutines.CoroutineScope
 
@@ -110,5 +111,11 @@ fun NavGraphBuilder.newOldTownGraph(appState: NewOldTownAppState) {
         AddSuggestionScreen(
             openScreen = { route -> appState.navigate(route) },
             popUpScreen = { appState.popUp() })
+    }
+
+    composable(SUGGESTION_LIST_SCREEN) {
+        SuggestionListScreen(
+            openScreen = { route -> appState.navigate(route) }
+        )
     }
 }

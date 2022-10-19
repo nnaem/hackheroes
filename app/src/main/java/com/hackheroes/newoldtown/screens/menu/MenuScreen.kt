@@ -7,6 +7,7 @@ import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Map
+import androidx.compose.material.icons.filled.FormatListBulleted
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -44,6 +45,7 @@ fun MenuScreen(
         Spacer(modifier = Modifier.spacer())
         GoToMapCard { viewModel.onGoToMapClick(openScreen) }
         AddSuggestionCard { viewModel.onAddSuggestionClick(openScreen) }
+        GoToSuggestionListCard { viewModel.onGoToSuggestionListClick(openScreen) }
         SignOutCard { viewModel.onSignOutClick(restartApp) }
         DeleteMyAccountCard { viewModel.onDeleteMyAccountClick(restartApp) }
     }
@@ -63,6 +65,15 @@ private fun GoToMapCard(navigateFunc: () -> Unit) {
 private fun AddSuggestionCard(navigateFunc: () -> Unit) {
     RegularCardEditor(AppText.add_suggestion, Icons.Filled.Add, "", Modifier.card()) {
         // navigate to home:
+        navigateFunc();
+    }
+}
+
+@ExperimentalMaterialApi
+@Composable
+private fun GoToSuggestionListCard(navigateFunc: () -> Unit) {
+    RegularCardEditor(AppText.suggestion_list, Icons.Filled.FormatListBulleted, "", Modifier.card()) {
+        // navigate to suggestion list:
         navigateFunc();
     }
 }

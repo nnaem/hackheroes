@@ -29,6 +29,9 @@
     <string name="title">Nazwa</string>
     <string name="description">Opis</string>
 
+    <!-- SuggestionListScreen -->
+    <string name="suggestion_list">Lista Sugestii</string>
+
     <!-- Menu -->
     <string name="menu">Menu</string>
     <string name="sign_out">Wyloguj się</string>

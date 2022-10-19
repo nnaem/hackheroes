@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.hackheroes.newoldtown.ADD_SUGGESTION_SCREEN
 import com.hackheroes.newoldtown.HOME_SCREEN
 import com.hackheroes.newoldtown.SPLASH_SCREEN
+import com.hackheroes.newoldtown.SUGGESTION_LIST_SCREEN
 import com.hackheroes.newoldtown.model.service.AccountService
 import com.hackheroes.newoldtown.model.service.StorageService
 import com.hackheroes.newoldtown.screens.NewOldTownViewModel
@@ -27,6 +28,8 @@ class MenuModel @Inject constructor(
     }
 
     fun onGoToMapClick(openScreen: (String) -> Unit) = openScreen(HOME_SCREEN)
+
+    fun onGoToSuggestionListClick(openScreen: (String) -> Unit) = openScreen(SUGGESTION_LIST_SCREEN)
 
     fun onAddSuggestionClick(openScreen: (String) -> Unit) = openScreen(ADD_SUGGESTION_SCREEN)
 

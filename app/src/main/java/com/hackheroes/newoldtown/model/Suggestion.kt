@@ -5,5 +5,6 @@ data class Suggestion(
     val description: String = "",
     val latitude: Double = 0.0,
     val longitude: Double = 0.0,
-    val userId: String = ""
+    val userId: String = "",
+    val voteCount: Int = 0
 )
