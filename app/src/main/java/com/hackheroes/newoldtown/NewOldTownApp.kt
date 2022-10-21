@@ -115,7 +115,8 @@ fun NavGraphBuilder.newOldTownGraph(appState: NewOldTownAppState) {
 
     composable(SUGGESTION_LIST_SCREEN) {
         SuggestionListScreen(
-            openScreen = { route -> appState.navigate(route) }
+            openScreen = { route -> appState.navigate(route) },
+            popUpScreen = { appState.popUp() }
         )
     }
 }
