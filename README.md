@@ -29,7 +29,7 @@ Aplikacja wykorzystuje Google Firebase do logowania i rejestracji, oraz bazy dan
 Do umieszczania znaczników miasta wykorzystywane są Google Maps.
 
 ## Instalacja
-W sekcji Releasese tego repozytorium umieszczony jest plik APK, który wymaga skopiowania i instalacji na telefonie z Androidem.
+W sekcji Releases tego repozytorium umieszczony jest plik APK, który wymaga skopiowania i instalacji na telefonie z Androidem.
 
 ![Screenshot from 2022-10-23 20-23-16](https://user-images.githubusercontent.com/115596468/197409136-096cdff5-3367-4563-8bd1-a2b9f8492e98.png)
 
