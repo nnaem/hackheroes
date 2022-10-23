@@ -3,7 +3,6 @@
     <string name="app_name">New Old Town</string>
     <string name="email">E-mail</string>
     <string name="password">Hasło</string>
-    <string name="repeat_password">Powtórz hasło</string>
     <string name="generic_error">Nieokreślony błąd - spróbuj powonie później</string>
     <string name="email_error">Wprowadź prawidłowy adres e-mail</string>
     <string name="cancel">Anuluj</string>
@@ -42,4 +41,8 @@
     <string name="succesfully_added_suggestion">Pomyśnie dodano!</string>
     <string name="suggestion_title_error">Tutuł musi mieć przynajmniej 5 znaków</string>
     <string name="suggestion_description_error">Opis musi mieć przynajmniej 10 znaków</string>
+    <string name="back">Powrót</string>
+    <string name="sign_up">Zarejestruj się</string>
+    <string name="sign_up_error">Błąd tworzenia konta</string>
+    <string name="account_created">Konto utworzone</string>
 </resources>

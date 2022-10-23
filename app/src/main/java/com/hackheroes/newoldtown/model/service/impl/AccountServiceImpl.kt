@@ -34,11 +34,17 @@ class AccountServiceImpl @Inject constructor() : AccountService {
             .addOnCompleteListener { onResult(it.exception) }
     }
 
-    override fun linkAccount(email: String, password: String, onResult: (Throwable?) -> Unit) {
+    override fun createAccount(email: String, password: String, onSuccess: () -> Unit, onFail: (Throwable?) -> Unit) {
         val credential = EmailAuthProvider.getCredential(email, password)
 
-        Firebase.auth.currentUser!!.linkWithCredential(credential)
-            .addOnCompleteListener { onResult(it.exception) }
+        Firebase.auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    onSuccess();
+                } else {
+                    onFail(task.exception)
+                }
+            }
     }
 
     override fun deleteAccount(onResult: (Throwable?) -> Unit) {

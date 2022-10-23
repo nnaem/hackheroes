@@ -16,12 +16,12 @@ fun BasicTextButton(@StringRes text: Int, modifier: Modifier, action: () -> Unit
 }
 
 @Composable
-fun BasicButton(@StringRes text: Int, modifier: Modifier, action: () -> Unit) {
+fun BasicButton(@StringRes text: Int, modifier: Modifier, action: () -> Unit, color: Color? = Color(0xFF009688)) {
     Button(
         onClick = action,
         modifier = modifier,
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = Color(0xFF009688),
+            backgroundColor = color ?: Color(0xFF009688),
             contentColor = MaterialTheme.colors.onPrimary
         )
     ) {

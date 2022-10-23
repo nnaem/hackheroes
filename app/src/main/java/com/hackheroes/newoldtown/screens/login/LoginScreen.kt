@@ -1,33 +1,37 @@
 package com.hackheroes.newoldtown.screens.login
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.ExperimentalMaterialApi
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.hackheroes.newoldtown.R
 import com.hackheroes.newoldtown.common.composable.BasicButton
-import com.hackheroes.newoldtown.common.composable.BasicTextButton
-import com.hackheroes.newoldtown.common.composable.BasicToolbar
 import com.hackheroes.newoldtown.common.composable.EmailField
 import com.hackheroes.newoldtown.common.composable.PasswordField
-import com.hackheroes.newoldtown.common.composable.RegularCardEditor
 import com.hackheroes.newoldtown.common.ext.basicButton
-import com.hackheroes.newoldtown.common.ext.card
 import com.hackheroes.newoldtown.common.ext.fieldModifier
-import com.hackheroes.newoldtown.common.ext.textButton
 import com.hackheroes.newoldtown.R.string as AppText
 
-@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun LoginScreen(
     openScreen: (String) -> Unit,
@@ -37,8 +41,31 @@ fun LoginScreen(
 ) {
     val uiState by viewModel.uiState
 
-    BasicToolbar(AppText.login_details)
+    LoginScreenContent(
+        modifier = modifier,
+        email = uiState.email,
+        password = uiState.password,
+        onEmailChange = viewModel::onEmailChange,
+        onPasswordChange = viewModel::onPasswordChange,
+        onSignInClick = {
+            viewModel.onSignInClick(openAndPopUp)
+        },
+        onSignUpClick = {
+            viewModel.onSignUpClick(openScreen)
+        },
+    )
+}
 
+@Composable
+fun LoginScreenContent(
+    modifier: Modifier = Modifier,
+    email: String,
+    password: String,
+    onEmailChange: (String) -> Unit,
+    onPasswordChange: (String) -> Unit,
+    onSignInClick: () -> Unit,
+    onSignUpClick: () -> Unit
+) {
     Column(
         modifier = modifier
             .fillMaxWidth()
@@ -47,19 +74,71 @@ fun LoginScreen(
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        EmailField(uiState.email, viewModel::onEmailChange, Modifier.fieldModifier())
-        PasswordField(uiState.password, viewModel::onPasswordChange, Modifier.fieldModifier())
+        Image(
+            painter = painterResource(id = R.drawable.zyrardow),
+            contentDescription = "Logo",
+            modifier = Modifier
+                .height(100.dp)
+                .width(100.dp)
+        )
 
-        BasicButton(AppText.sign_in, Modifier.basicButton().height(48.dp)) {
-            viewModel.onSignInClick(openAndPopUp)
-        }
+        Text(
+            text = stringResource(id = R.string.app_name),
+            style = TextStyle(
+                fontSize = 15.sp,
+                color = Color.Black
+            )
+        )
 
-        BasicTextButton(AppText.forgot_password, Modifier.textButton()) {
-            viewModel.onForgotPasswordClick()
-        }
+        Spacer(modifier = Modifier.height(32.dp))
 
-        RegularCardEditor(AppText.create_account, R.drawable.ic_create_account, "", Modifier.card()) {
-            viewModel.onSignUpClick(openScreen)
-        }
+        Text(
+            text = stringResource(id = R.string.sign_in),
+            style = TextStyle(
+                fontSize = 24.sp,
+                color = Color.Black
+            )
+        )
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+
+        EmailField(email, onEmailChange, Modifier.fieldModifier())
+
+        Spacer(Modifier.height(16.dp))
+
+        PasswordField(password, onPasswordChange, Modifier.fieldModifier())
+
+        Spacer(Modifier.height(16.dp))
+
+        BasicButton(AppText.sign_in,
+            Modifier
+                .basicButton()
+                .height(48.dp), {
+            onSignInClick()
+        })
+
+        Spacer(Modifier.height(16.dp))
+
+        BasicButton(AppText.create_account,
+            Modifier
+                .basicButton()
+                .height(48.dp), {
+            onSignUpClick()
+        }, Color(0xFF681531)
+        )
     }
+}
+
+@Composable
+@Preview
+fun LoginScreenPreview() {
+    LoginScreenContent(
+        email = "",
+        password = "",
+        onEmailChange = {},
+        onPasswordChange = {},
+        onSignInClick = {},
+        onSignUpClick = {}
+    )
 }

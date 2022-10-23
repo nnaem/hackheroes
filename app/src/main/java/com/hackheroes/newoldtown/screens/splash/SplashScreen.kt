@@ -47,9 +47,9 @@ fun SplashScreen(
                 if (viewModel.showError.value) {
                     Text(text = stringResource(R.string.generic_error))
 
-                    BasicButton(R.string.try_again, Modifier.basicButton()) {
+                    BasicButton(R.string.try_again, Modifier.basicButton(), {
                         viewModel.onAppStart(openAndPopUp)
-                    }
+                    })
                 } else {
                     CircularProgressIndicator(color = MaterialTheme.colors.onBackground)
                 }
