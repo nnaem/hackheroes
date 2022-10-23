@@ -14,11 +14,12 @@
 <!-- TABLE OF CONTENTS -->
 ## Spis treści
 
-* [Co to za aplikacja](#what-app)
-* [Instalacja](#installation)
-* [Obsługa](#installation)
-* [Zrzuty ekranu](#screenshot)
+* [Co to za aplikacja](#Co to za aplikacja)
+* [Instalacja](#Instalacja)
+* [Obsługa](#Obsługa)
+* [Zrzuty ekranu](#Zrzuty ekranu)
 
+<!-- Co to za aplikacja -->
 ## Co to za aplikacja
 
 Jest to aplikacja mobilna dla systemu Android, pozwalająca użytkownikom
