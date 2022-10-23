@@ -66,13 +66,17 @@ fun EmailField(value: String, onNewValue: (String) -> Unit, modifier: Modifier =
         value = value,
         onValueChange = { onNewValue(it) },
         placeholder = { Text(stringResource(AppText.email)) },
+        keyboardOptions = KeyboardOptions.Default.copy(
+            keyboardType = KeyboardType.Email,
+            imeAction = ImeAction.Next
+        ),
         leadingIcon = { Icon(imageVector = Icons.Default.Email, contentDescription = "Email") }
     )
 }
 
 @Composable
-fun PasswordField(value: String, onNewValue: (String) -> Unit, modifier: Modifier = Modifier) {
-    PasswordField(value, AppText.password, onNewValue, modifier)
+fun PasswordField(value: String, onNewValue: (String) -> Unit, modifier: Modifier = Modifier, onDone: () -> Unit) {
+    PasswordField(value, AppText.password, onNewValue, onDone, modifier)
 }
 
 @Composable
@@ -80,6 +84,7 @@ private fun PasswordField(
     value: String,
     @StringRes placeholder: Int,
     onNewValue: (String) -> Unit,
+    onDone: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     var isVisible by remember { mutableStateOf(false) }
@@ -101,7 +106,15 @@ private fun PasswordField(
                 Icon(painter = icon, contentDescription = "Visibility")
             }
         },
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
+        keyboardOptions = KeyboardOptions(
+            keyboardType = KeyboardType.Password,
+            imeAction = ImeAction.Done,
+        ),
+        keyboardActions = KeyboardActions(
+            onDone = {
+                onDone()
+            }
+        ),
         visualTransformation = visualTransformation
     )
 }

@@ -7,8 +7,10 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.ExperimentalComposeUiApi
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
@@ -22,6 +24,7 @@ import com.hackheroes.newoldtown.common.ext.basicButton
 import com.hackheroes.newoldtown.common.ext.fieldModifier
 import com.hackheroes.newoldtown.R.string as AppText
 
+@OptIn(ExperimentalComposeUiApi::class)
 @Composable
 fun SignUpScreen(
     openAndPopUp: (String, String) -> Unit,
@@ -30,6 +33,7 @@ fun SignUpScreen(
 ) {
     val uiState by viewModel.uiState
     val fieldModifier = Modifier.fieldModifier()
+    val keyboardController = LocalSoftwareKeyboardController.current
 
     SignUpContent(
         modifier = modifier,
@@ -43,6 +47,9 @@ fun SignUpScreen(
         },
         onBackClick = {
             viewModel.onBackClick(openAndPopUp)
+        },
+        onPasswordDoneClick = {
+            keyboardController?.hide()
         }
     )
 }
@@ -56,7 +63,8 @@ fun SignUpContent(
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit,
     onSignUpClick: () -> Unit,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    onPasswordDoneClick: () -> Unit = {}
 ) {
     Column(
         modifier = modifier
@@ -98,7 +106,7 @@ fun SignUpContent(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        PasswordField(password, onPasswordChange, fieldModifier)
+        PasswordField(password, onPasswordChange, fieldModifier, onPasswordDoneClick)
 
         Spacer(modifier = Modifier.height(16.dp))
 
