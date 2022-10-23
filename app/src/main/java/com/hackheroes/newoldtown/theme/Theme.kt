@@ -26,12 +26,13 @@ private val DarkColorPalette = darkColors(
     primary = Bright,
     primaryVariant = Medium,
     secondary = Dark,
+    onPrimary = White2,
 )
 
 private val LightColorPalette = lightColors(
     primary = Bright,
     primaryVariant = Medium,
-    secondary = Dark
+    secondary = Dark,
 )
 
 @Composable

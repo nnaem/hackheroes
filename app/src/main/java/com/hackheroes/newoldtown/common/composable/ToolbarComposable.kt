@@ -15,7 +15,8 @@ import androidx.compose.ui.res.stringResource
 fun BasicToolbar(@StringRes title: Int) {
     TopAppBar(
         title = { Text(stringResource(title)) },
-        backgroundColor = toolbarColor()
+        backgroundColor = toolbarColor(),
+        contentColor = textTopbarColor()
     )
 }
 
@@ -24,11 +25,12 @@ fun ActionToolbar(
     @StringRes title: Int,
     @DrawableRes endActionIcon: Int,
     modifier: Modifier,
-    endAction: () -> Unit
+    endAction: () -> Unit,
 ) {
     TopAppBar(
         title = { Text(stringResource(title)) },
         backgroundColor = toolbarColor(),
+        contentColor = textTopbarColor(),
         actions = {
             Box(modifier) {
                 IconButton(onClick = endAction) {
@@ -41,5 +43,15 @@ fun ActionToolbar(
 
 @Composable
 private fun toolbarColor(darkTheme: Boolean = isSystemInDarkTheme()): Color {
+    return if (darkTheme) MaterialTheme.colors.primary else MaterialTheme.colors.primary
+}
+
+@Composable
+private fun textTopbarColor(darkTheme: Boolean = isSystemInDarkTheme()): Color {
+    return if (darkTheme) MaterialTheme.colors.onPrimary else MaterialTheme.colors.onPrimary
+}
+
+@Composable
+private fun ActionToolbarColor(darkTheme: Boolean = isSystemInDarkTheme()): Color {
     return if (darkTheme) MaterialTheme.colors.primary else MaterialTheme.colors.primary
 }

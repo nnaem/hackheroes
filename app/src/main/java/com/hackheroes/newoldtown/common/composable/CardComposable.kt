@@ -23,7 +23,7 @@ fun DangerousCardEditor(
     modifier: Modifier,
     onEditClick: () -> Unit
 ) {
-    CardEditor(title, icon, content, onEditClick, MaterialTheme.colors.onSurface, modifier)
+    CardEditor(title, icon, content, onEditClick, MaterialTheme.colors.primary, modifier)
 }
 
 @ExperimentalMaterialApi
@@ -35,7 +35,7 @@ fun RegularCardEditor(
     modifier: Modifier,
     onEditClick: () -> Unit
 ) {
-    CardEditor(title, icon, content, onEditClick, MaterialTheme.colors.onSurface, modifier)
+    CardEditor(title, icon, content, onEditClick, MaterialTheme.colors.primary, modifier)
 }
 
 @ExperimentalMaterialApi
@@ -47,7 +47,7 @@ fun RegularCardEditor(
     modifier: Modifier,
     onEditClick: () -> Unit
 ) {
-    CardEditor(title, icon, content, onEditClick, MaterialTheme.colors.onSurface, modifier)
+    CardEditor(title, icon, content, onEditClick, MaterialTheme.colors.primary, modifier)
 }
 
 
@@ -61,7 +61,7 @@ private fun CardEditor(
     highlightColor: Color,
     modifier: Modifier
 ) {
-    Card(backgroundColor = MaterialTheme.colors.onPrimary, modifier = modifier, onClick = onEditClick) {
+    Card(backgroundColor = MaterialTheme.colors.onSurface, modifier = modifier, onClick = onEditClick) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.fillMaxWidth().padding(16.dp)

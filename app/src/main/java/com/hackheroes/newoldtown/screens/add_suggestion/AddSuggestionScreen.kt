@@ -102,7 +102,7 @@ fun AddSuggestionContent(
 ) {
     Column(
         modifier = modifier
-            .background(color = androidx.compose.ui.graphics.Color.White)
+            .background(color = androidx.compose.ui.graphics.Color.DarkGray)
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

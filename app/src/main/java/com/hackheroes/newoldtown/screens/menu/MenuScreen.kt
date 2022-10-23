@@ -39,7 +39,7 @@ fun MenuScreen(
             title = AppText.menu,
             modifier = Modifier.toolbarActions(),
             endActionIcon = AppIcon.ic_close,
-            endAction = { viewModel.onExit(openScreen) }
+            endAction = { viewModel.onExit(openScreen)}
         )
 
         Spacer(modifier = Modifier.spacer())
