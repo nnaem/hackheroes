@@ -14,13 +14,13 @@
 <!-- TABLE OF CONTENTS -->
 ## Spis treści
 
-* [Co to za aplikacja](#Co to za aplikacja)
-* [Instalacja](#Instalacja)
-* [Obsługa](#Obsługa)
-* [Zrzuty ekranu](#Zrzuty ekranu)
+* [O aplikacji](#o-aplikacji)
+* [Instalacja](#instalacja)
+* [Obsługa](#obsługa)
+* [Zrzuty ekranu](#zrzuty-ekranu)
 
 <!-- Co to za aplikacja -->
-## Co to za aplikacja
+## O aplikacji
 
 Jest to aplikacja mobilna dla systemu Android, pozwalająca użytkownikom
 zgłaszanie miejsc w mieście, które wymagają ulepszenia.
